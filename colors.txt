@@ -1,0 +1,6 @@
+Arka Plan: Açık Zemin (#F8F9FA)
+Ana Başlıklar: Derin Mavi (#4A55E1)
+Paragraf Metinleri: Ana Metin Rengi (#212529)
+Vurgulanmak İstenen İkon veya Alt Başlıklar: Canlı Mor (#BE4BDB)
+"Kayıt Ol" Butonu: Teknoloji Turkuazı (#18D2D9)
+Footer (Alt Bilgi) Yazıları: İkincil Metin / Kenarlık (#6C757D)
