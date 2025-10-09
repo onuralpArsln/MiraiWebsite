@@ -39,8 +39,14 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
                 
+                // Get current language for message
+                const lang = localStorage.getItem('language') || 'TR';
+                const successMsg = lang === 'TR' 
+                    ? '✅ Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.'
+                    : '✅ Your message has been sent successfully! We will get back to you soon.';
+                
                 // Show success message
-                formMessage.textContent = '✅ Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.';
+                formMessage.textContent = successMsg;
                 formMessage.className = 'form-message success';
                 formMessage.style.display = 'block';
 
@@ -60,8 +66,14 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(function(error) {
                 console.error('FAILED...', error);
                 
+                // Get current language for message
+                const lang = localStorage.getItem('language') || 'TR';
+                const errorMsg = lang === 'TR'
+                    ? '❌ Mesaj gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.'
+                    : '❌ An error occurred while sending the message. Please try again later.';
+                
                 // Show error message
-                formMessage.textContent = '❌ Mesaj gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.';
+                formMessage.textContent = errorMsg;
                 formMessage.className = 'form-message error';
                 formMessage.style.display = 'block';
 

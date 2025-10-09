@@ -608,6 +608,39 @@ body {
     var(--accent-purple)
   );
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-icon {
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: iconFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.course-card:nth-child(1) .course-icon {
+  animation-delay: 0s;
+}
+
+.course-card:nth-child(2) .course-icon {
+  animation-delay: 0.5s;
+}
+
+.course-card:nth-child(3) .course-icon {
+  animation-delay: 1s;
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .course-badge {

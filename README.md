@@ -108,34 +108,64 @@ MiraiWebsite/
 - Animasyonlu illüstrasyonlar
 - Kolay navigasyon
 
-## 🌐 Dil Değiştirici (Language Switcher)
+## 🌐 Çok Dilli Destek (Multi-language i18n)
 
-### Mevcut Durum
-- Navigation bar'da TR/EN dil değiştirici butonu eklenmiştir
-- localStorage ile tercih kaydedilir
-- Şu an placeholder olarak çalışır (bildirim gösterir)
-- Gelecekte tam i18n desteği için hazır
+### ✅ Tam TR/EN Desteği Aktif!
 
-### Tam Çok Dilli Destek İçin
+Website artık **Türkçe ve İngilizce** dillerini destekliyor:
 
-EJS yapısı sayesinde kolayca çok dilli destek eklenebilir. Gelecekte Türkçe/İngilizce dil desteği için:
+**Özellikler:**
+- ✅ **Anında Dil Değiştirme** - Sayfa yenilenmeden dil değişir
+- ✅ **localStorage ile Kalıcı** - Tercih kaydedilir
+- ✅ **Kapsamlı Çeviri** - Tüm ana bölümler çevrilmiştir
+- ✅ **Bildirim Sistemi** - Dil değişikliği bildirimi
 
-1. `locales/` klasörü oluşturun
-2. Dil dosyalarını ekleyin (tr.json, en.json)
-3. Middleware ile dil tespiti yapın
-4. EJS'e dil verilerini gönderin
+**Çevrilen Bölümler:**
+- Navigation menü
+- Hero section (başlık, açıklama, butonlar, istatistikler)
+- Özellikler bölümü (6 özellik)
+- Referanslar başlığı
+- Çözümler başlığı
+- CTA bölümü
+- Demo bölümü
+- İletişim formu (tüm etiketler)
+- Footer
 
-Örnek:
-```javascript
-app.get('/', (req, res) => {
-    const lang = req.query.lang || 'tr';
-    res.render('index', {
-        pageTitle: 'Mirai AI',
-        lang: lang,
-        t: require(`./locales/${lang}.json`)
-    });
-});
+**Çeviri Dosyaları:**
+- `/public/locales/tr.json` - Türkçe
+- `/public/locales/en.json` - İngilizce
+
+**Kullanım:**
+1. Sağ üst köşede **[TR]** butonuna tıklayın
+2. Dil **EN** olarak değişir ve sayfa İngilizce'ye çevrilir
+3. Tekrar tıklayın, Türkçe'ye döner
+4. Tercih otomatik kaydedilir
+
+### Çeviri Ekleme/Düzenleme
+
+JSON dosyalarını düzenleyin:
+
+**1. Türkçe:** `/public/locales/tr.json`
+```json
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "features": "Özellikler"
+  }
+}
 ```
+
+**2. İngilizce:** `/public/locales/en.json`
+```json
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features"
+  }
+}
+```
+
+Değişiklikler otomatik olarak yüklenir!
 
 ## 📝 Yeni Sayfa Ekleme
 

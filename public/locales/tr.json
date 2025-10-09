@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "features": "Özellikler",
+    "solutions": "Çözümler",
+    "contact": "İletişim",
+    "demo": "Demo İste"
+  },
+  "hero": {
+    "title": "İşinizi Yapay Zeka ile",
+    "titleHighlight": "Dönüştürün",
+    "description": "Kurumsal yapay zeka çözümlerimizle operasyonlarınızı otomatikleştirin, verimliliği artırın ve rekabette öne geçin. Binlerce işletme zaten Mirai ile geleceği inşa ediyor.",
+    "demoBtn": "Ücretsiz Demo",
+    "learnBtn": "Çözümleri İncele",
+    "stats": {
+      "clients": "Kurumsal Müşteri",
+      "requests": "Aylık API İsteği",
+      "uptime": "Uptime Garantisi"
+    }
+  },
+  "features": {
+    "title": "Neden Mirai AI?",
+    "description": "En gelişmiş yapay zeka teknolojileri ve kurumsal düzeyde güvenlik ile işletmenizin dijital dönüşümünü hızlandırıyoruz.",
+    "integration": {
+      "title": "Kolay Entegrasyon",
+      "desc": "Mevcut sistemlerinize dakikalar içinde entegre olur. API veya SDK ile hızlı başlangıç."
+    },
+    "learning": {
+      "title": "Sürekli Öğrenen AI",
+      "desc": "Modellerimiz sürekli gelişir ve işletmenizin ihtiyaçlarına uyum sağlar."
+    },
+    "custom": {
+      "title": "Özelleştirilebilir Çözümler",
+      "desc": "İşletmenizin özel ihtiyaçlarına göre tamamen özelleştirilebilir AI modelleri."
+    },
+    "security": {
+      "title": "Kurumsal Güvenlik",
+      "desc": "ISO 27001 sertifikalı, GDPR uyumlu ve end-to-end şifreli veri güvenliği."
+    },
+    "scalable": {
+      "title": "Ölçeklenebilir Altyapı",
+      "desc": "Küçük startup'tan enterprise seviyeye kadar ölçeklenebilen bulut altyapısı."
+    },
+    "support": {
+      "title": "7/24 Teknik Destek",
+      "desc": "Özel hesap yöneticisi ve teknik ekibimiz her zaman yanınızda."
+    }
+  },
+  "references": {
+    "title": "Referanslarımız",
+    "description": "Türkiye'nin önde gelen kurumları bize güveniyor"
+  },
+  "solutions": {
+    "title": "AI Çözümlerimiz",
+    "description": "İşletmenizin ihtiyaçlarına özel tasarlanmış yapay zeka çözümlerimizi keşfedin.",
+    "viewAll": "Tüm Çözümleri İncele"
+  },
+  "cta": {
+    "title": "İşletmenizi Dönüştürmeye Hazır mısınız?",
+    "description": "30 günlük ücretsiz deneme ile Mirai AI'ı keşfedin. Kredi kartı gerekmez, kurulum ücretsiz.",
+    "button": "Demo Deneyin"
+  },
+  "demo": {
+    "title": "AI Asistanımızı Deneyin",
+    "description": "Yapay zeka çözümlerimiz hakkında sorular sorun. Asistanımız size yardımcı olmak için burada!",
+    "status": "Online",
+    "placeholder": "Sorunuzu yazın...",
+    "send": "Gönder"
+  },
+  "contact": {
+    "title": "Bizimle İletişime Geçin",
+    "description": "Ekibimiz size en kısa sürede dönüş yapacaktır. İşletmeniz için özel çözümler hakkında konuşalım.",
+    "name": "Ad Soyad",
+    "email": "E-posta",
+    "company": "Şirket Adı",
+    "phone": "Telefon",
+    "message": "Mesajınız",
+    "submit": "Gönder",
+    "sending": "Gönderiliyor...",
+    "success": "✅ Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.",
+    "error": "❌ Mesaj gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
+    "info": {
+      "address": "Adres",
+      "addressText": "İstanbul, Türkiye",
+      "emailTitle": "E-posta",
+      "hours": "Çalışma Saatleri",
+      "hoursText": "Pzt - Cum: 09:00 - 18:00"
+    }
+  },
+  "footer": {
+    "description": "İşletmelerin yapay zeka ile geleceğini şekillendiren kurumsal AI çözümleri platformu.",
+    "solutions": "Çözümler",
+    "company": "Şirket",
+    "support": "Destek",
+    "copyright": "© 2025 Mirai. Tüm hakları saklıdır."
+  }
+}
+

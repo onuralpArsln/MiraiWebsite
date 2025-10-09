@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "solutions": "Solutions",
+    "contact": "Contact",
+    "demo": "Request Demo"
+  },
+  "hero": {
+    "title": "Transform Your Business with",
+    "titleHighlight": "Artificial Intelligence",
+    "description": "Automate your operations, increase efficiency, and stay ahead of the competition with our enterprise AI solutions. Thousands of businesses are already building the future with Mirai.",
+    "demoBtn": "Free Demo",
+    "learnBtn": "Explore Solutions",
+    "stats": {
+      "clients": "Enterprise Clients",
+      "requests": "Monthly API Requests",
+      "uptime": "Uptime Guarantee"
+    }
+  },
+  "features": {
+    "title": "Why Mirai AI?",
+    "description": "We accelerate your company's digital transformation with cutting-edge artificial intelligence technologies and enterprise-level security.",
+    "integration": {
+      "title": "Easy Integration",
+      "desc": "Integrates with your existing systems in minutes. Quick start with API or SDK."
+    },
+    "learning": {
+      "title": "Continuously Learning AI",
+      "desc": "Our models continuously improve and adapt to your business needs."
+    },
+    "custom": {
+      "title": "Customizable Solutions",
+      "desc": "Fully customizable AI models tailored to your business's specific needs."
+    },
+    "security": {
+      "title": "Enterprise Security",
+      "desc": "ISO 27001 certified, GDPR compliant, and end-to-end encrypted data security."
+    },
+    "scalable": {
+      "title": "Scalable Infrastructure",
+      "desc": "Cloud infrastructure that scales from small startups to enterprise level."
+    },
+    "support": {
+      "title": "24/7 Technical Support",
+      "desc": "Dedicated account manager and technical team always by your side."
+    }
+  },
+  "references": {
+    "title": "Our References",
+    "description": "Turkey's leading companies trust us"
+  },
+  "solutions": {
+    "title": "Our AI Solutions",
+    "description": "Discover our artificial intelligence solutions custom-designed for your business needs.",
+    "viewAll": "View All Solutions"
+  },
+  "cta": {
+    "title": "Ready to Transform Your Business?",
+    "description": "Discover Mirai AI with a 30-day free trial. No credit card required, free setup.",
+    "button": "Try Demo"
+  },
+  "demo": {
+    "title": "Try Our AI Assistant",
+    "description": "Ask questions about our artificial intelligence solutions. Our assistant is here to help!",
+    "status": "Online",
+    "placeholder": "Type your question...",
+    "send": "Send"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Our team will get back to you as soon as possible. Let's talk about custom solutions for your business.",
+    "name": "Full Name",
+    "email": "Email",
+    "company": "Company Name",
+    "phone": "Phone",
+    "message": "Your Message",
+    "submit": "Send",
+    "sending": "Sending...",
+    "success": "✅ Your message has been sent successfully! We will get back to you soon.",
+    "error": "❌ An error occurred while sending the message. Please try again later.",
+    "info": {
+      "address": "Address",
+      "addressText": "Istanbul, Turkey",
+      "emailTitle": "Email",
+      "hours": "Working Hours",
+      "hoursText": "Mon - Fri: 09:00 - 18:00"
+    }
+  },
+  "footer": {
+    "description": "Enterprise AI solutions platform shaping the future of businesses with artificial intelligence.",
+    "solutions": "Solutions",
+    "company": "Company",
+    "support": "Support",
+    "copyright": "© 2025 Mirai. All rights reserved."
+  }
+}
+
