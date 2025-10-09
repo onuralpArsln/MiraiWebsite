@@ -150,67 +150,115 @@
 }
 
 /* ==========================================
-   CHART ANIMATION - Data Morphing
+   CHART ANIMATION - Smooth Position Morphing (3 Curves)
    ========================================== */
 
 .chart-axis {
   /* Static - never animates */
 }
 
+/* All curves start at base position */
+.chart-curve-1,
+.chart-curve-2,
+.chart-curve-3 {
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
 .chart-curve-1 {
   opacity: 1;
-  transition: opacity 0.5s ease;
+  transform: translateY(0);
 }
 
 .chart-curve-2 {
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transform: translateY(2px); /* Slightly offset */
 }
 
+.chart-curve-3 {
+  opacity: 0;
+  transform: translateY(4px); /* More offset */
+}
+
+/* Curve 1: Shifts and morphs */
 .course-card:nth-child(3):hover .chart-curve-1 {
-  animation: chartFadeOut 3s ease-in-out infinite;
+  animation: chartShift1 4.5s ease-in-out infinite;
 }
 
+/* Curve 2: Shifts and morphs */
 .course-card:nth-child(3):hover .chart-curve-2 {
-  animation: chartFadeIn 3s ease-in-out infinite;
+  animation: chartShift2 4.5s ease-in-out infinite;
 }
 
-@keyframes chartFadeOut {
+/* Curve 3: Shifts and morphs */
+.course-card:nth-child(3):hover .chart-curve-3 {
+  animation: chartShift3 4.5s ease-in-out infinite;
+}
+
+/* Curve 1: Visible → Shift down → Hidden → Shift up → Visible */
+@keyframes chartShift1 {
   0%, 30% { 
-    opacity: 1; 
+    opacity: 1;
+    transform: translateY(0);
   }
-  35%, 65% { 
-    opacity: 0; 
+  33% {
+    opacity: 0.7;
+    transform: translateY(-2px);
+  }
+  36%, 64% { 
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  67% {
+    opacity: 0.7;
+    transform: translateY(2px);
   }
   70%, 100% { 
-    opacity: 1; 
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@keyframes chartFadeIn {
+/* Curve 2: Hidden → Shift up → Visible → Shift down → Hidden */
+@keyframes chartShift2 {
   0%, 30% { 
-    opacity: 0; 
+    opacity: 0;
+    transform: translateY(4px);
   }
-  35%, 65% { 
-    opacity: 1; 
+  33% {
+    opacity: 0.7;
+    transform: translateY(2px);
+  }
+  36%, 64% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+  67% {
+    opacity: 0.7;
+    transform: translateY(-2px);
   }
   70%, 100% { 
-    opacity: 0; 
+    opacity: 0;
+    transform: translateY(-4px);
   }
 }
 
-/* Data points pulse slightly */
-.course-card:nth-child(3):hover .chart-curve-1 circle,
-.course-card:nth-child(3):hover .chart-curve-2 circle {
-  animation: pointPulse 1.5s ease-in-out infinite;
-}
-
-@keyframes pointPulse {
-  0%, 100% { 
-    transform: scale(1); 
+/* Curve 3: Hidden → Shift up → Visible → Shift down → Hidden */
+@keyframes chartShift3 {
+  0%, 64% { 
+    opacity: 0;
+    transform: translateY(6px);
   }
-  50% { 
-    transform: scale(1.2); 
+  67% {
+    opacity: 0.7;
+    transform: translateY(3px);
+  }
+  70%, 97% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateY(-2px);
   }
 }
 
@@ -221,7 +269,8 @@
 .eye-pupil,
 .bubble,
 .chart-curve-1,
-.chart-curve-2 {
+.chart-curve-2,
+.chart-curve-3 {
   will-change: transform, opacity;
   backface-visibility: hidden;
 }
@@ -246,8 +295,9 @@
   }
   
   .course-card:hover .chart-curve-1,
-  .course-card:hover .chart-curve-2 {
-    animation-duration: 2s;
+  .course-card:hover .chart-curve-2,
+  .course-card:hover .chart-curve-3 {
+    animation-duration: 3s; /* Faster on mobile */
   }
 }
 
@@ -257,7 +307,8 @@
   .eye-pupil,
   .bubble,
   .chart-curve-1,
-  .chart-curve-2 {
+  .chart-curve-2,
+  .chart-curve-3 {
     animation: none !important;
     transition: none !important;
   }

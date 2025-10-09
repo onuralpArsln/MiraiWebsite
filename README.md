@@ -99,10 +99,11 @@ MiraiWebsite/
   - Her balon kendi kuyruğu ile
   - Yavaşça kaybolan efekt
 - **Grafik İkonu** (Tahminsel Analitik):
-  - İki farklı veri eğrisi arası geçiş
-  - Dinamik veri değişimi görüntüsü
-  - Veri noktaları pulse animasyonu
-  - Sonsuz döngü (infinite loop)
+  - Üç farklı veri eğrisi arası smooth geçiş
+  - Dinamik veri değişimi görüntüsü (3 trend)
+  - Clean çizgi animasyonu (noktalar yok)
+  - 9 saniyelik sonsuz döngü
+  - Akıcı opacity geçişleri
 
 ### 📈 SEO Optimizasyonu
 - Dinamik meta etiketleri
