@@ -108,7 +108,15 @@ MiraiWebsite/
 - Animasyonlu illüstrasyonlar
 - Kolay navigasyon
 
-## 🌐 Çok Dilli Destek
+## 🌐 Dil Değiştirici (Language Switcher)
+
+### Mevcut Durum
+- Navigation bar'da TR/EN dil değiştirici butonu eklenmiştir
+- localStorage ile tercih kaydedilir
+- Şu an placeholder olarak çalışır (bildirim gösterir)
+- Gelecekte tam i18n desteği için hazır
+
+### Tam Çok Dilli Destek İçin
 
 EJS yapısı sayesinde kolayca çok dilli destek eklenebilir. Gelecekte Türkçe/İngilizce dil desteği için:
 

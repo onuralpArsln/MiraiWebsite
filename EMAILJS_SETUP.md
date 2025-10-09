@@ -48,7 +48,7 @@ Yeni İletişim Formu Mesajı - {{user_name}}
 ### Step 4: Configure "To" Email
 In the template settings:
 - Set the **To Email** field to the email address where you want to receive contact form submissions
-- Example: `info@mirai.ai` or your own email
+- Example: `info@miraisoftware.com` or your own email
 
 ### Step 5: Test Your Form
 

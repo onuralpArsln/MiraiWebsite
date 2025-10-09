@@ -6,7 +6,7 @@
   "triggers": {
     "müşteri hizmetleri": {
       "response": "**Akıllı Müşteri Hizmetleri Çözümümüz** 🎯\n\nDoğal Dil İşleme (NLP) teknolojimiz ile:\n\n✅ 7/24 otomatik müşteri desteği\n✅ Çok dilli destek (TR, EN, DE, FR)\n✅ %95 doğruluk oranı\n✅ Ortalama 2 saniye yanıt süresi\n\n💡 Demo görmek ister misiniz?",
-      "followup": ["Demo için iletişim formunu doldurabilir veya info@mirai.ai adresinden bize ulaşabilirsiniz!"]
+      "followup": ["Demo için iletişim formunu doldurabilir veya info@miraisoftware.com adresinden bize ulaşabilirsiniz!"]
     },
     "fiyat": {
       "response": "**Esnek Fiyatlandırma Modelleri** 💰\n\n📊 Kullanım bazlı ücretlendirme\n🚀 Startup paketleri\n🏢 Enterprise çözümler\n\nİhtiyaçlarınıza özel teklif almak için iletişime geçin!",

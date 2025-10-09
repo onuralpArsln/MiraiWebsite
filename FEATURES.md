@@ -441,7 +441,7 @@ console.log('Headers:', req.headers);
 ## 📞 Support
 
 For issues or questions:
-- 📧 Email: info@mirai.ai
+- 📧 Email: info@miraisoftware.com
 - 🐛 Issues: GitHub Issues
 - 📖 Docs: See README.md and EMAILJS_SETUP.md
 
