@@ -185,9 +185,46 @@
                     <div class="course-image">
                         <div class="course-badge">Popüler</div>
                         <div class="course-icon">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M8 10H16M8 14H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <svg width="64" height="64" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Main chat bubble (static) -->
+                                <g class="main-chat">
+                                    <path d="M20 15C20 12 22 10 25 10H75C78 10 80 12 80 15V55C80 58 78 60 75 60H35L20 72V15Z" 
+                                          stroke="currentColor" 
+                                          stroke-width="3" 
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"/>
+                                    <!-- Chat lines inside main bubble -->
+                                    <line x1="32" y1="28" x2="68" y2="28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                    <line x1="32" y1="42" x2="55" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                </g>
+                                
+                                <!-- Animated conversation bubbles -->
+                                <g class="chat-bubbles">
+                                    <!-- Left bubble 1 (with tail pointing left-down) -->
+                                    <g class="bubble bubble-1" opacity="0">
+                                        <rect x="18" y="80" width="16" height="10" rx="5" fill="currentColor"/>
+                                        <path d="M18 88 L15 92 L18 90 Z" fill="currentColor"/>
+                                    </g>
+                                    
+                                    <!-- Right bubble 2 (with tail pointing right-down) -->
+                                    <g class="bubble bubble-2" opacity="0">
+                                        <rect x="66" y="72" width="20" height="11" rx="5" fill="currentColor"/>
+                                        <path d="M86 81 L90 85 L86 83 Z" fill="currentColor"/>
+                                    </g>
+                                    
+                                    <!-- Left bubble 3 (with tail pointing left-down) -->
+                                    <g class="bubble bubble-3" opacity="0">
+                                        <rect x="22" y="64" width="14" height="9" rx="4" fill="currentColor"/>
+                                        <path d="M22 71 L19 74 L22 72 Z" fill="currentColor"/>
+                                    </g>
+                                    
+                                    <!-- Right bubble 4 (with tail pointing right-down) -->
+                                    <g class="bubble bubble-4" opacity="0">
+                                        <rect x="62" y="58" width="18" height="10" rx="5" fill="currentColor"/>
+                                        <path d="M80 66 L84 70 L80 68 Z" fill="currentColor"/>
+                                    </g>
+                                </g>
                             </svg>
                         </div>
                     </div>
@@ -212,9 +249,19 @@
                         <div class="course-badge bestseller">En Çok Tercih Edilen</div>
                         <div class="course-icon">
                             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                                <path d="M12 9V9.01M12 15V15.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <!-- Outer eye shape (static) -->
+                                <g class="eye-outer">
+                                    <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" 
+                                          stroke="currentColor" 
+                                          stroke-width="2" 
+                                          stroke-linecap="round" 
+                                          stroke-linejoin="round"/>
+                                </g>
+                                <!-- Pupil (animated) -->
+                                <g class="eye-pupil">
+                                    <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                                    <circle cx="12" cy="12" r="1.5" fill="white" opacity="0.8"/>
+                                </g>
                             </svg>
                         </div>
                     </div>
@@ -239,9 +286,43 @@
                         <div class="course-badge">Yeni</div>
                         <div class="course-icon">
                             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3 3V21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M18 17L13 12L9 16L3 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M18 13V17H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <!-- Axes (static) -->
+                                <g class="chart-axis">
+                                    <path d="M3 3V21H21" 
+                                          stroke="currentColor" 
+                                          stroke-width="2" 
+                                          stroke-linecap="round"/>
+                                </g>
+                                
+                                <!-- Curve 1: Upward trend -->
+                                <g class="chart-curve-1">
+                                    <path d="M3 18 L7 14 L11 10 L15 8 L21 6" 
+                                          stroke="currentColor" 
+                                          stroke-width="2.5" 
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"/>
+                                    <!-- Data points -->
+                                    <circle cx="7" cy="14" r="2" fill="currentColor"/>
+                                    <circle cx="11" cy="10" r="2" fill="currentColor"/>
+                                    <circle cx="15" cy="8" r="2" fill="currentColor"/>
+                                    <circle cx="21" cy="6" r="2" fill="currentColor"/>
+                                </g>
+                                
+                                <!-- Curve 2: Different pattern (starts hidden) -->
+                                <g class="chart-curve-2">
+                                    <path d="M3 16 L7 12 L11 13 L15 9 L21 7" 
+                                          stroke="currentColor" 
+                                          stroke-width="2.5" 
+                                          fill="none"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"/>
+                                    <!-- Data points -->
+                                    <circle cx="7" cy="12" r="2" fill="currentColor"/>
+                                    <circle cx="11" cy="13" r="2" fill="currentColor"/>
+                                    <circle cx="15" cy="9" r="2" fill="currentColor"/>
+                                    <circle cx="21" cy="7" r="2" fill="currentColor"/>
+                                </g>
                             </svg>
                         </div>
                     </div>

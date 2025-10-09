@@ -86,6 +86,24 @@ MiraiWebsite/
 - Responsive tasarım
 - Kolay logo ekleme sistemi
 
+### 🎨 İnteraktif Çözüm Kartları
+- **Göz İkonu** (Computer Vision):
+  - 2x göz kırpma animasyonu
+  - Göz bebeği sağa-sola bakma hareketi
+  - Dış göz sabıt kalıyor
+  - 3 saniyelik smooth animasyon
+- **Sohbet İkonu** (NLP/Müşteri Hizmetleri):
+  - 4 gerçek sohbet balonu (kuyruklu)
+  - Sol ve sağdan dönüşümlü konuşma görüntüsü
+  - Aşağıdan yukarı yükselen animasyon
+  - Her balon kendi kuyruğu ile
+  - Yavaşça kaybolan efekt
+- **Grafik İkonu** (Tahminsel Analitik):
+  - İki farklı veri eğrisi arası geçiş
+  - Dinamik veri değişimi görüntüsü
+  - Veri noktaları pulse animasyonu
+  - Sonsuz döngü (infinite loop)
+
 ### 📈 SEO Optimizasyonu
 - Dinamik meta etiketleri
 - Open Graph (Facebook) etiketleri
