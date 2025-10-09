@@ -55,6 +55,58 @@ MiraiWebsite/
 - **EJS** - Template engine
 - **Nodemon** - Geliştirme sırasında otomatik yeniden başlatma
 - **EmailJS** - İletişim formu e-posta entegrasyonu
+- **Helmet.js** - Güvenlik başlıkları
+- **Compression** - Gzip sıkıştırma
+- **Express Rate Limit** - API hız sınırlama
+
+## ✨ Yeni Özellikler
+
+### 🌙 Dark Mode (Karanlık Tema)
+- **Varsayılan olarak açık tema** - Yeni ziyaretçiler için
+- Tam karanlık tema desteği
+- localStorage ile kalıcı kayıt
+- Manuel geçiş butonu (Sun/Moon icon)
+- Klavye kısayolu: `Ctrl+Shift+D`
+- Tüm bileşenler için özel dark mode stilleri
+- Tema değişikliğinde animasyon efekti
+
+### 🤖 İnteraktif AI Demo
+- Gerçek zamanlı sohbet arayüzü
+- Akıllı anahtar kelime tanıma
+- Yazma animasyonları
+- Markdown ve kod formatlaması
+- Örnek sorular ile hızlı başlangıç
+- Responsive tasarım
+
+### 🏢 Referanslar Carousel
+- Otomatik dönen sonsuz logo carousel
+- Grayscale efekti (hover'da renkli)
+- Pause on hover
+- Dark mode desteği
+- Responsive tasarım
+- Kolay logo ekleme sistemi
+
+### 📈 SEO Optimizasyonu
+- Dinamik meta etiketleri
+- Open Graph (Facebook) etiketleri
+- Twitter Card desteği
+- JSON-LD yapılandırılmış veri
+- Otomatik sitemap.xml
+- robots.txt yapılandırması
+
+### ⚡ Performans & Güvenlik
+- Helmet.js güvenlik başlıkları
+- Gzip sıkıştırma
+- Hız sınırlama (100 istek/15dk)
+- İletişim formu için özel limit (5 istek/15dk)
+- Cache control
+- CSP (Content Security Policy)
+
+### 🚫 Özel Hata Sayfaları
+- Özel 404 sayfası
+- Özel 500 sayfası
+- Animasyonlu illüstrasyonlar
+- Kolay navigasyon
 
 ## 🌐 Çok Dilli Destek
 
@@ -91,6 +143,31 @@ app.get('/hakkimizda', (req, res) => {
 ```
 
 3. Header'daki navigasyon linklerini güncelleyin
+
+## 🏢 Referans Logo Ekleme
+
+Müşteri/partner logolarını eklemek için:
+
+1. Logo dosyalarınızı `/public/assets/references/` klasörüne ekleyin
+2. `/public/js/references.js` dosyasını açın
+3. `referenceLogos` dizisine logo dosya adlarını ekleyin:
+
+```javascript
+const referenceLogos = [
+    'client1.png',
+    'client2.png',
+    'client3.png',
+    // Daha fazla logo ekleyin
+];
+```
+
+**Önerilen logo formatı:**
+- PNG (şeffaf arkaplan) veya SVG
+- Genişlik: 300-500px
+- Yükseklik: 100-200px
+- Dosya boyutu: <50KB (optimize edilmiş)
+
+Detaylı bilgi için: `/public/assets/references/README.md`
 
 ## 📧 İletişim Formu Kurulumu
 

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #ffe3e3 100%);
+            padding: 20px;
+        }
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+        }
+        .error-code {
+            font-size: 120px;
+            font-weight: 700;
+            color: var(--accent-purple);
+            line-height: 1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ff6b6b, var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .error-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+        .error-description {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .error-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-home {
+            padding: 16px 32px;
+            background-color: var(--accent-purple);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(190, 75, 219, 0.3);
+        }
+        .btn-refresh {
+            padding: 16px 32px;
+            background-color: var(--white);
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 10px;
+            border: 2px solid var(--accent-purple);
+            transition: all 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .btn-refresh:hover {
+            background-color: var(--accent-purple);
+            color: var(--white);
+        }
+        .error-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: shake 2s ease-in-out infinite;
+        }
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+        .error-details {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            text-align: left;
+            font-size: 14px;
+            color: var(--text-secondary);
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .error-details pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-container">
+        <div class="error-content">
+            <div class="error-icon">⚠️</div>
+            <div class="error-code">500</div>
+            <h1 class="error-title">Sunucu Hatası</h1>
+            <p class="error-description">
+                Üzgünüz, bir şeyler ters gitti. Teknik ekibimiz durumdan haberdar edildi. 
+                Lütfen daha sonra tekrar deneyin.
+            </p>
+            <div class="error-buttons">
+                <a href="/" class="btn-home">Ana Sayfaya Dön</a>
+                <button onclick="location.reload()" class="btn-refresh">Yeniden Dene</button>
+            </div>
+            <% if (error && error.stack) { %>
+            <div class="error-details">
+                <strong>Hata Detayları (Development Mode):</strong>
+                <pre><%= error.stack %></pre>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
+

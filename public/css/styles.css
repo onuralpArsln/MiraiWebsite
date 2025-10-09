@@ -11,6 +11,73 @@
   --shadow-hover: rgba(0, 0, 0, 0.15);
 }
 
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --bg-light: #1a1a2e;
+  --bg-dark: #16213e;
+  --text-primary: #eaeaea;
+  --text-secondary: #a0a0a0;
+  --white: #0f0f1e;
+  --card-bg: #16213e;
+  --shadow: rgba(255, 255, 255, 0.05);
+  --shadow-hover: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .navbar {
+  background-color: var(--bg-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .hero {
+  background: linear-gradient(135deg, var(--bg-light) 0%, #0f3460 100%);
+}
+
+[data-theme="dark"] .features {
+  background-color: var(--bg-dark);
+}
+
+[data-theme="dark"] .feature-card {
+  background-color: var(--card-bg);
+  border-color: transparent;
+}
+
+[data-theme="dark"] .feature-card:hover {
+  border-color: var(--accent-purple);
+  background-color: #1e2a47;
+}
+
+[data-theme="dark"] .courses {
+  background-color: var(--bg-light);
+}
+
+[data-theme="dark"] .course-card {
+  background-color: var(--card-bg);
+}
+
+[data-theme="dark"] .contact {
+  background-color: var(--bg-dark);
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
+  background-color: var(--card-bg);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .info-card {
+  background-color: var(--card-bg);
+}
+
+[data-theme="dark"] .footer {
+  background-color: #0f0f1e;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .floating-card {
+  background-color: var(--card-bg);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +91,14 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth transitions for theme switching */
+*,
+*::before,
+*::after {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .container {
@@ -120,10 +195,64 @@ body {
   transition: 0.3s;
 }
 
+/* Theme Toggle */
+.theme-toggle {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-left: 10px;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-light);
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-icon {
+  display: none;
+}
+
+[data-theme="light"] .theme-icon.sun {
+  display: block;
+}
+
+[data-theme="dark"] .theme-icon.moon {
+  display: block;
+}
+
 /* Hero Section */
 .hero {
   padding: 100px 0;
   background: linear-gradient(135deg, var(--bg-light) 0%, #e3e7ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Particle Canvas */
+#particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content {
@@ -336,6 +465,87 @@ body {
 .feature-card p {
   color: var(--text-secondary);
   line-height: 1.7;
+}
+
+/* References Section */
+.references {
+  padding: 80px 0;
+  background-color: var(--white);
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .references {
+  background-color: var(--bg-dark);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.references .section-header {
+  margin-bottom: 50px;
+}
+
+.references-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.references-track {
+  display: flex;
+  gap: 60px;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+.references-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+
+.reference-logo {
+  height: 80px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.7);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .reference-logo {
+  filter: grayscale(100%) opacity(0.4) brightness(2);
+}
+
+.reference-logo:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1);
+}
+
+[data-theme="dark"] .reference-logo:hover {
+  filter: grayscale(0%) opacity(1) brightness(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reference-logo {
+    height: 60px;
+    max-width: 150px;
+  }
+  
+  .references-track {
+    gap: 40px;
+  }
 }
 
 /* Courses Section */

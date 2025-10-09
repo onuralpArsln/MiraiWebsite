@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e3e7ff 100%);
+            padding: 20px;
+        }
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+        }
+        .error-code {
+            font-size: 120px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            line-height: 1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .error-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+        .error-description {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .error-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-home {
+            padding: 16px 32px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 85, 225, 0.3);
+        }
+        .btn-back {
+            padding: 16px 32px;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 10px;
+            border: 2px solid var(--primary-blue);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .btn-back:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        .error-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-container">
+        <div class="error-content">
+            <div class="error-icon">🤖</div>
+            <div class="error-code">404</div>
+            <h1 class="error-title">Sayfa Bulunamadı</h1>
+            <p class="error-description">
+                Aradığınız sayfa mevcut değil veya taşınmış olabilir. 
+                Ana sayfaya dönerek gezinmeye devam edebilirsiniz.
+            </p>
+            <div class="error-buttons">
+                <a href="/" class="btn-home">Ana Sayfaya Dön</a>
+                <a href="javascript:history.back()" class="btn-back">Geri Git</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+

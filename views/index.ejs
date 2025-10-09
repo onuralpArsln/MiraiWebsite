@@ -2,6 +2,7 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <canvas id="particles-canvas"></canvas>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -12,7 +13,7 @@
                     </p>
                     <div class="hero-buttons">
                         <a href="#demo" class="btn-primary">Ücretsiz Demo</a>
-                        <a href="#learn-more" class="btn-secondary">Çözümleri İncele</a>
+                        <a href="#solutions" class="btn-secondary">Çözümleri İncele</a>
                     </div>
                     <div class="hero-stats">
                         <div class="stat-item">
@@ -153,6 +154,23 @@
         </div>
     </section>
 
+    <!-- References Section -->
+    <section class="references" id="references">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Referanslarımız</h2>
+                <p class="section-description">
+                    Türkiye'nin önde gelen kurumları bize güveniyor
+                </p>
+            </div>
+            <div class="references-carousel">
+                <div class="references-track" id="references-track">
+                    <!-- Logos will be duplicated here by JavaScript for infinite scroll -->
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Solutions Section -->
     <section class="courses" id="solutions">
         <div class="container">
@@ -248,7 +266,58 @@
                     30 günlük ücretsiz deneme ile Mirai AI'ı keşfedin. Kredi kartı gerekmez, kurulum ücretsiz.
                 </p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn-cta">Bize Ulaşın</a>
+                    <a href="#demo" class="btn-cta">Demo Deneyin</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section class="demo-section" id="demo">
+        <div class="container demo-container">
+            <div class="section-header">
+                <h2 class="section-title">AI Asistanımızı Deneyin</h2>
+                <p class="section-description">
+                    Yapay zeka çözümlerimiz hakkında sorular sorun. Asistanımız size yardımcı olmak için burada!
+                </p>
+            </div>
+            
+            <div class="demo-chat">
+                <div class="demo-header">
+                    <div class="demo-header-info">
+                        <div class="demo-avatar">🤖</div>
+                        <div class="demo-header-text">
+                            <h3>Mirai AI Asistan</h3>
+                            <p>Yapay Zeka Uzmanı</p>
+                        </div>
+                    </div>
+                    <div class="demo-status">
+                        <span class="status-dot"></span>
+                        <span>Online</span>
+                    </div>
+                </div>
+                
+                <div class="demo-messages" id="demo-messages">
+                    <!-- Messages will be added here dynamically -->
+                </div>
+                
+                <div class="demo-examples">
+                    <button class="example-btn">Müşteri hizmetleri nasıl çalışır?</button>
+                    <button class="example-btn">Fiyatlar ne kadar?</button>
+                    <button class="example-btn">Görüntü analizi yapabiliyor musunuz?</button>
+                    <button class="example-btn">Nasıl başlarım?</button>
+                </div>
+                
+                <div class="demo-input-area">
+                    <input type="text" 
+                           class="demo-input" 
+                           id="demo-input" 
+                           placeholder="Sorunuzu yazın..."
+                           autocomplete="off">
+                    <button class="demo-send-btn" id="demo-send" disabled>
+                        <span>Gönder</span>
+                        <span>➤</span>
+                    </button>
                 </div>
             </div>
         </div>

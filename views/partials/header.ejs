@@ -5,10 +5,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= pageTitle %></title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="<%= seo.siteDescription %>">
+    <meta name="keywords" content="yapay zeka, AI, machine learning, kurumsal AI, otomasyon, NLP, computer vision">
+    <meta name="author" content="<%= seo.siteName %>">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="<%= seo.siteUrl %>">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= seo.siteUrl %>">
+    <meta property="og:title" content="<%= pageTitle %>">
+    <meta property="og:description" content="<%= seo.siteDescription %>">
+    <meta property="og:image" content="<%= seo.siteUrl %><%= seo.ogImage %>">
+    <meta property="og:site_name" content="<%= seo.siteName %>">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="<%= seo.siteUrl %>">
+    <meta name="twitter:title" content="<%= pageTitle %>">
+    <meta name="twitter:description" content="<%= seo.siteDescription %>">
+    <meta name="twitter:image" content="<%= seo.siteUrl %><%= seo.ogImage %>">
+    <meta name="twitter:site" content="<%= seo.twitterHandle %>">
+    <meta name="twitter:creator" content="<%= seo.twitterHandle %>">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "<%= seo.siteName %>",
+        "description": "<%= seo.siteDescription %>",
+        "url": "<%= seo.siteUrl %>",
+        "logo": "<%= seo.siteUrl %>/assets/logo.png",
+        "sameAs": [
+            "https://www.facebook.com/miraiAI",
+            "https://twitter.com/miraiAI",
+            "https://www.linkedin.com/company/miraiAI"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "info@mirai.ai",
+            "contactType": "Customer Service",
+            "availableLanguage": ["Turkish", "English"]
+        }
+    }
+    </script>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/demo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Theme Detection Script (must be in head to prevent flash) -->
+    <script>
+        // Detect and apply theme before page renders
+        // Default to light mode unless user has explicitly chosen dark
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 
 <body>
@@ -28,6 +92,10 @@
                 <div class="nav-buttons">
                     <a href="#login" class="btn-login">Giriş Yap</a>
                     <a href="#demo" class="btn-signup">Demo İste</a>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-icon sun">🌞</span>
+                        <span class="theme-icon moon">🌙</span>
+                    </button>
                 </div>
                 <div class="hamburger">
                     <span></span>

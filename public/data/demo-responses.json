@@ -1,0 +1,59 @@
+{
+  "greetings": [
+    "Merhaba! Ben Mirai AI asistanınızım. Size nasıl yardımcı olabilirim? 🤖",
+    "Selam! Yapay zeka çözümlerimiz hakkında soru sormaktan çekinmeyin! 👋"
+  ],
+  "triggers": {
+    "müşteri hizmetleri": {
+      "response": "**Akıllı Müşteri Hizmetleri Çözümümüz** 🎯\n\nDoğal Dil İşleme (NLP) teknolojimiz ile:\n\n✅ 7/24 otomatik müşteri desteği\n✅ Çok dilli destek (TR, EN, DE, FR)\n✅ %95 doğruluk oranı\n✅ Ortalama 2 saniye yanıt süresi\n\n💡 Demo görmek ister misiniz?",
+      "followup": ["Demo için iletişim formunu doldurabilir veya info@mirai.ai adresinden bize ulaşabilirsiniz!"]
+    },
+    "fiyat": {
+      "response": "**Esnek Fiyatlandırma Modelleri** 💰\n\n📊 Kullanım bazlı ücretlendirme\n🚀 Startup paketleri\n🏢 Enterprise çözümler\n\nİhtiyaçlarınıza özel teklif almak için iletişime geçin!",
+      "followup": ["Hangi çözümle ilgileniyorsunuz? (Müşteri Hizmetleri, Görüntü Analizi, Tahminsel Analitik)"]
+    },
+    "görüntü": {
+      "response": "**Görüntü Analiz Platformu** 📸\n\nComputer Vision teknolojimiz ile:\n\n✨ Üretim hatlarında kalite kontrol\n✨ Güvenlik kamera analizi\n✨ Otomatik nesne tanıma\n✨ Gerçek zamanlı işleme\n\n🎯 Kullanım alanları: Üretim, güvenlik, perakende",
+      "followup": ["Hangi sektörde faaliyet gösteriyorsunuz?"]
+    },
+    "analitik": {
+      "response": "**Tahminsel Analitik Suite** 📊\n\nYapay zeka destekli analizler:\n\n📈 Satış tahminleri\n📦 Envanter optimizasyonu  \n⚠️ Risk analizi\n💹 Trend tespiti\n\nVerinizi değere dönüştürün!",
+      "followup": ["Hangi tür verileri analiz etmek istersiniz?"]
+    },
+    "entegrasyon": {
+      "response": "**Kolay Entegrasyon** 🔌\n\n```javascript\n// RESTful API ile hızlı başlangıç\nfetch('https://api.mirai.ai/v1/analyze', {\n  method: 'POST',\n  headers: { 'Authorization': 'Bearer YOUR_KEY' },\n  body: JSON.stringify({ text: 'Analiz edilecek metin' })\n})\n```\n\n✅ Detaylı dokümantasyon\n✅ SDK desteği (Python, Node.js, Java)\n✅ Webhook entegrasyonu",
+      "followup": ["Hangi programlama dilini kullanıyorsunuz?"]
+    },
+    "güvenlik": {
+      "response": "**Kurumsal Güvenlik** 🔒\n\n🛡️ ISO 27001 sertifikalı\n🌍 GDPR & KVKK uyumlu\n🔐 End-to-end şifreleme\n🏥 SOC 2 Type II\n\nVerileriniz güvende!",
+      "followup": ["Güvenlik hakkında başka sorunuz var mı?"]
+    },
+    "başla": {
+      "response": "**Hemen Başlayın!** 🚀\n\n1️⃣ Ücretsiz demo talep edin\n2️⃣ 30 günlük deneme başlatın\n3️⃣ Özel kurulum desteği alın\n\n💳 Kredi kartı gerekmez!\n\nHazır mısınız?",
+      "followup": ["İletişim formunu doldurun, hemen dönüş yapalım! 👉 #contact"]
+    }
+  },
+  "examples": [
+    {
+      "text": "Müşteri hizmetleri nasıl çalışır?",
+      "keywords": ["müşteri hizmetleri"]
+    },
+    {
+      "text": "Fiyatlar ne kadar?",
+      "keywords": ["fiyat"]
+    },
+    {
+      "text": "Görüntü analizi yapabiliyor musunuz?",
+      "keywords": ["görüntü"]
+    },
+    {
+      "text": "Veri analitiği hakkında bilgi",
+      "keywords": ["analitik"]
+    }
+  ],
+  "fallback": [
+    "İlginç bir soru! Bu konuda detaylı bilgi için **iletişim formunu** doldurabilir misiniz? Uzman ekibimiz size yardımcı olacak. 📞",
+    "Bu konu hakkında özel bilgi vermek için sizinle görüşmek isteriz. **Demo talep** ederseniz, tüm detayları paylaşabiliriz! 🎯"
+  ]
+}
+

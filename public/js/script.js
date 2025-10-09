@@ -82,19 +82,38 @@ document.querySelectorAll('.feature-card, .course-card').forEach(card => {
 window.addEventListener('load', () => {
     const stats = document.querySelectorAll('.stat-item h3');
     stats.forEach((stat, index) => {
-        const target = parseInt(stat.textContent.replace(/,/g, '').replace('+', ''));
+        const originalText = stat.textContent;
+        
+        // Extract number, suffix, and prefix
+        const hasPlus = originalText.includes('+');
+        const hasPercent = originalText.includes('%');
+        const hasM = originalText.includes('M');
+        
+        // Parse the number (handle decimals)
+        const numText = originalText.replace(/[^0-9.]/g, '');
+        const target = parseFloat(numText);
+        
         let current = 0;
         const increment = target / 50;
+        const isDecimal = numText.includes('.');
+        
         const timer = setInterval(() => {
             current += increment;
             if (current >= target) {
-                stat.textContent = stat.textContent.includes('+')
-                    ? target.toLocaleString() + '+'
-                    : target.toLocaleString();
+                // Final value with original suffix
+                let finalText = isDecimal ? target.toFixed(1) : Math.floor(target).toLocaleString();
+                if (hasM) finalText += 'M';
+                if (hasPlus) finalText += '+';
+                if (hasPercent) finalText += '%';
+                stat.textContent = finalText;
                 clearInterval(timer);
             } else {
-                stat.textContent = Math.floor(current).toLocaleString() +
-                    (stat.textContent.includes('+') ? '+' : '');
+                // Intermediate value with suffix
+                let displayText = isDecimal ? current.toFixed(1) : Math.floor(current).toLocaleString();
+                if (hasM) displayText += 'M';
+                if (hasPlus) displayText += '+';
+                if (hasPercent) displayText += '%';
+                stat.textContent = displayText;
             }
         }, 40);
     });
