@@ -1,7 +1,7 @@
-// Configuration file - replace with .env in production
+// Configuration file - env-less mode
 module.exports = {
     port: process.env.PORT || 3002,
-    nodeEnv: process.env.NODE_ENV || 'development',
+    nodeEnv: process.env.NODE_ENV || 'production',
 
     // EmailJS
     emailJS: {
@@ -18,11 +18,25 @@ module.exports = {
 
     // SEO
     seo: {
-        siteUrl: process.env.SITE_URL || 'http://localhost:3000',
+        siteUrl: process.env.SITE_URL || 'http://localhost:3002',
         siteName: 'Mirai AI',
         siteDescription: 'Kurumsal yapay zeka çözümleri ile işletmenizin dijital dönüşümünü hızlandırıyoruz',
         twitterHandle: '@miraiAI',
         ogImage: '/assets/og-image.jpg'
+    },
+
+    // Static file serving configuration - optimized for deployment
+    staticFiles: {
+        maxAge: '1y', // Always use long cache for production
+        etag: true,
+        lastModified: true,
+        setHeaders: (res, path) => {
+            // Set proper MIME types for CSS files
+            if (path.endsWith('.css')) {
+                res.setHeader('Content-Type', 'text/css');
+                res.setHeader('Cache-Control', 'public, max-age=31536000'); // 1 year cache
+            }
+        }
     }
 };
 

@@ -20,7 +20,10 @@ app.use(helmet({
             styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
             fontSrc: ["'self'", "https://fonts.gstatic.com"],
             imgSrc: ["'self'", "data:", "https:"],
-            connectSrc: ["'self'", "https://api.emailjs.com"]
+            connectSrc: ["'self'", "https://api.emailjs.com"],
+            // Allow CSS files to be served properly
+            objectSrc: ["'none'"],
+            upgradeInsecureRequests: []
         }
     }
 }));
@@ -32,15 +35,21 @@ app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Add middleware to handle potential deployment issues
+app.use((req, res, next) => {
+    // Log static file requests for debugging
+    if (req.url.includes('.css') || req.url.includes('.js') || req.url.includes('.png') || req.url.includes('.jpg')) {
+        console.log(`📁 Static file request: ${req.url} - ${req.method}`);
+    }
+    next();
+});
+
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Serve static files with cache control
-app.use(express.static(path.join(__dirname, 'public'), {
-    maxAge: config.nodeEnv === 'production' ? '1y' : 0,
-    etag: true
-}));
+// Serve static files with cache control and proper headers
+app.use(express.static(path.join(__dirname, 'public'), config.staticFiles));
 
 // General rate limiter
 const generalLimiter = rateLimit({
@@ -57,6 +66,22 @@ const contactLimiter = rateLimit({
     max: config.rateLimit.contactFormLimit,
     message: 'Too many contact form submissions, please try again later.',
     skipSuccessfulRequests: true
+});
+
+// Health check endpoint for debugging
+app.get('/health', (req, res) => {
+    res.json({
+        status: 'OK',
+        timestamp: new Date().toISOString(),
+        environment: config.nodeEnv,
+        port: config.port,
+        staticFilesPath: path.join(__dirname, 'public'),
+        cssFiles: {
+            styles: '/css/styles.css',
+            demo: '/css/demo.css',
+            animations: '/css/animations.css'
+        }
+    });
 });
 
 // Routes
