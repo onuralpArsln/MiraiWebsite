@@ -37,9 +37,12 @@ app.use(express.urlencoded({ extended: true }));
 
 // Add middleware to handle potential deployment issues
 app.use((req, res, next) => {
-    // Log static file requests for debugging
+    // Enhanced logging for PM2 debugging
     if (req.url.includes('.css') || req.url.includes('.js') || req.url.includes('.png') || req.url.includes('.jpg')) {
-        console.log(`📁 Static file request: ${req.url} - ${req.method}`);
+        console.log(`📁 [${new Date().toISOString()}] Static file request: ${req.method} ${req.url}`);
+        console.log(`📁 Working directory: ${process.cwd()}`);
+        console.log(`📁 Public path exists: ${require('fs').existsSync(path.join(__dirname, 'public'))}`);
+        console.log(`📁 CSS file exists: ${require('fs').existsSync(path.join(__dirname, 'public', 'css', 'styles.css'))}`);
     }
     next();
 });
@@ -70,18 +73,47 @@ const contactLimiter = rateLimit({
 
 // Health check endpoint for debugging
 app.get('/health', (req, res) => {
+    const fs = require('fs');
+    const publicPath = path.join(__dirname, 'public');
+    const cssPath = path.join(publicPath, 'css', 'styles.css');
+
     res.json({
         status: 'OK',
         timestamp: new Date().toISOString(),
         environment: config.nodeEnv,
         port: config.port,
-        staticFilesPath: path.join(__dirname, 'public'),
+        workingDirectory: process.cwd(),
+        serverDirectory: __dirname,
+        staticFilesPath: publicPath,
+        publicExists: fs.existsSync(publicPath),
+        cssExists: fs.existsSync(cssPath),
         cssFiles: {
             styles: '/css/styles.css',
             demo: '/css/demo.css',
             animations: '/css/animations.css'
+        },
+        pm2: {
+            isPM2: process.env.PM2_HOME ? true : false,
+            pm2Home: process.env.PM2_HOME || 'Not running in PM2'
         }
     });
+});
+
+// Direct CSS test endpoint
+app.get('/test-css', (req, res) => {
+    const fs = require('fs');
+    const cssPath = path.join(__dirname, 'public', 'css', 'styles.css');
+
+    if (fs.existsSync(cssPath)) {
+        res.setHeader('Content-Type', 'text/css');
+        res.send(fs.readFileSync(cssPath, 'utf8'));
+    } else {
+        res.status(404).json({
+            error: 'CSS file not found',
+            path: cssPath,
+            exists: fs.existsSync(cssPath)
+        });
+    }
 });
 
 // Routes
