@@ -20,7 +20,7 @@ echo ""
 
 # Check if CSS files exist
 echo "2. Checking if CSS files exist..."
-CSS_PATH="/path/to/your/MiraiWebsite/public/css"
+CSS_PATH="/root/project/MiraiWebsite/public/css"
 if [ -f "$CSS_PATH/styles.css" ]; then
     echo "✅ styles.css exists"
     echo "   File size: $(stat -c%s "$CSS_PATH/styles.css") bytes"

@@ -40,7 +40,38 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Serve static files with cache control and proper headers
-app.use(express.static(path.join(__dirname, 'public'), config.staticFiles));
+app.use('/css', express.static(path.join(__dirname, 'public/css'), {
+    maxAge: '1y',
+    etag: true,
+    lastModified: true,
+    setHeaders: (res, filePath) => {
+        res.setHeader('Content-Type', 'text/css');
+        res.setHeader('Cache-Control', 'public, max-age=31536000');
+    }
+}));
+
+app.use('/js', express.static(path.join(__dirname, 'public/js'), {
+    maxAge: '1y',
+    etag: true,
+    lastModified: true,
+    setHeaders: (res, filePath) => {
+        res.setHeader('Content-Type', 'application/javascript');
+        res.setHeader('Cache-Control', 'public, max-age=31536000');
+    }
+}));
+
+app.use('/assets', express.static(path.join(__dirname, 'public/assets'), {
+    maxAge: '1y',
+    etag: true,
+    lastModified: true
+}));
+
+// Serve other static files
+app.use(express.static(path.join(__dirname, 'public'), {
+    maxAge: '1y',
+    etag: true,
+    lastModified: true
+}));
 
 // General rate limiter
 const generalLimiter = rateLimit({
