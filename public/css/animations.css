@@ -418,3 +418,109 @@
   filter: drop-shadow(0 6px 20px rgba(255, 255, 255, 0.25));
 }
 
+
+/* ==========================================
+   FALLBACK ANIMATIONS FOR BROWSER COMPATIBILITY
+   ========================================== */
+
+/* Fallback for browsers that don't support CSS animations */
+.no-cssanimations .course-card:hover .eye-pupil {
+  transform: translateX(2px);
+  transition: transform 0.3s ease;
+}
+
+.no-cssanimations .course-card:hover .bubble {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.no-cssanimations .course-card:hover .chart-curve-1,
+.no-cssanimations .course-card:hover .chart-curve-2,
+.no-cssanimations .course-card:hover .chart-curve-3 {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ==========================================
+   ENHANCED BROWSER COMPATIBILITY
+   ========================================== */
+
+/* Ensure animations work on touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .course-card:hover .eye-pupil {
+    animation: eyeLookAround 3s ease-in-out;
+    -webkit-animation: eyeLookAround 3s ease-in-out;
+    -moz-animation: eyeLookAround 3s ease-in-out;
+    -o-animation: eyeLookAround 3s ease-in-out;
+  }
+  
+  .course-card:hover .bubble-1 {
+    animation: bubbleChat 3s ease-in-out;
+    -webkit-animation: bubbleChat 3s ease-in-out;
+  }
+  
+  .course-card:hover .bubble-2 {
+    animation: bubbleChat 3s ease-in-out 0.3s;
+    -webkit-animation: bubbleChat 3s ease-in-out 0.3s;
+  }
+  
+  .course-card:hover .bubble-3 {
+    animation: bubbleChat 3s ease-in-out 0.6s;
+    -webkit-animation: bubbleChat 3s ease-in-out 0.6s;
+  }
+  
+  .course-card:hover .bubble-4 {
+    animation: bubbleChat 3s ease-in-out 0.9s;
+    -webkit-animation: bubbleChat 3s ease-in-out 0.9s;
+  }
+  
+  .course-card:hover .chart-curve-1 {
+    animation: chartShift1 4.5s ease-in-out infinite;
+    -webkit-animation: chartShift1 4.5s ease-in-out infinite;
+  }
+  
+  .course-card:hover .chart-curve-2 {
+    animation: chartShift2 4.5s ease-in-out infinite;
+    -webkit-animation: chartShift2 4.5s ease-in-out infinite;
+  }
+  
+  .course-card:hover .chart-curve-3 {
+    animation: chartShift3 4.5s ease-in-out infinite;
+    -webkit-animation: chartShift3 4.5s ease-in-out infinite;
+  }
+}
+
+/* Touch device fallbacks */
+@media (hover: none) {
+  .course-card:active .eye-pupil,
+  .course-card:focus .eye-pupil {
+    animation: eyeLookAround 3s ease-in-out;
+    -webkit-animation: eyeLookAround 3s ease-in-out;
+  }
+  
+  .course-card:active .bubble,
+  .course-card:focus .bubble {
+    animation: bubbleChat 3s ease-in-out;
+    -webkit-animation: bubbleChat 3s ease-in-out;
+  }
+  
+  .course-card:active .chart-curve-1,
+  .course-card:focus .chart-curve-1 {
+    animation: chartShift1 4.5s ease-in-out infinite;
+    -webkit-animation: chartShift1 4.5s ease-in-out infinite;
+  }
+  
+  .course-card:active .chart-curve-2,
+  .course-card:focus .chart-curve-2 {
+    animation: chartShift2 4.5s ease-in-out infinite;
+    -webkit-animation: chartShift2 4.5s ease-in-out infinite;
+  }
+  
+  .course-card:active .chart-curve-3,
+  .course-card:focus .chart-curve-3 {
+    animation: chartShift3 4.5s ease-in-out infinite;
+    -webkit-animation: chartShift3 4.5s ease-in-out infinite;
+  }
+}
