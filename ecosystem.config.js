@@ -1,6 +1,6 @@
 module.exports = {
     apps: [{
-        name: 'mirai-website',
+        name: 'miraiweb',
         script: 'server.js',
         instances: 1,
         autorestart: true,

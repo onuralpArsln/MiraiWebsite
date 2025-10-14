@@ -6,11 +6,11 @@ echo "🚀 Starting PM2 deployment for Mirai Website..."
 
 # Stop existing PM2 process if running
 echo "⏹️  Stopping existing PM2 process..."
-pm2 stop mirai-website 2>/dev/null || echo "No existing process to stop"
+pm2 stop miraiweb 2>/dev/null || echo "No existing process to stop"
 
 # Delete existing PM2 process
 echo "🗑️  Removing existing PM2 process..."
-pm2 delete mirai-website 2>/dev/null || echo "No existing process to delete"
+pm2 delete miraiweb 2>/dev/null || echo "No existing process to delete"
 
 # Create logs directory if it doesn't exist
 echo "📁 Creating logs directory..."
@@ -36,6 +36,6 @@ echo "   CSS test: http://your-domain:3002/test-css"
 echo "   Main CSS: http://your-domain:3002/css/styles.css"
 echo ""
 echo "📋 Useful PM2 commands:"
-echo "   pm2 logs mirai-website    # View logs"
-echo "   pm2 restart mirai-website # Restart app"
-echo "   pm2 stop mirai-website    # Stop app"
+echo "   pm2 logs miraiweb    # View logs"
+echo "   pm2 restart miraiweb # Restart app"
+echo "   pm2 stop miraiweb    # Stop app"
