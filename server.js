@@ -11,21 +11,9 @@ const PORT = config.port;
 // Trust proxy for rate limiting
 app.set('trust proxy', 1);
 
-// Security middleware
+// Security middleware - temporarily relaxed for CSS debugging
 app.use(helmet({
-    contentSecurityPolicy: {
-        directives: {
-            defaultSrc: ["'self'"],
-            scriptSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net", "https://fonts.googleapis.com"],
-            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
-            fontSrc: ["'self'", "https://fonts.gstatic.com"],
-            imgSrc: ["'self'", "data:", "https:"],
-            connectSrc: ["'self'", "https://api.emailjs.com"],
-            // Allow CSS files to be served properly
-            objectSrc: ["'none'"],
-            upgradeInsecureRequests: []
-        }
-    }
+    contentSecurityPolicy: false  // Temporarily disable CSP for debugging
 }));
 
 // Compression middleware
