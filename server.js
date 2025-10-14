@@ -45,8 +45,15 @@ app.use('/css', express.static(path.join(__dirname, 'public/css'), {
     etag: true,
     lastModified: true,
     setHeaders: (res, filePath) => {
-        res.setHeader('Content-Type', 'text/css');
+        res.setHeader('Content-Type', 'text/css; charset=utf-8');
         res.setHeader('Cache-Control', 'public, max-age=31536000');
+        // Enable CORS for CSS files to prevent loading issues
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'GET');
+        // Ensure proper MIME type for animations
+        if (filePath.includes('animations.css')) {
+            res.setHeader('X-Content-Type-Options', 'nosniff');
+        }
     }
 }));
 

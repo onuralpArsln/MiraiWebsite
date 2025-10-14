@@ -21,6 +21,9 @@
 
 .course-card:nth-child(2):hover .eye-pupil {
   animation: eyeLookAround 3s ease-in-out;
+  -webkit-animation: eyeLookAround 3s ease-in-out;
+  -moz-animation: eyeLookAround 3s ease-in-out;
+  -o-animation: eyeLookAround 3s ease-in-out;
 }
 
 @keyframes eyeLookAround {
@@ -81,6 +84,68 @@
   /* Return to rest */
   100% { 
     transform: translateX(0) scaleY(1); 
+  }
+}
+
+/* WebKit keyframes for better browser compatibility */
+@-webkit-keyframes eyeLookAround {
+  /* Blink 1 */
+  0% { 
+    -webkit-transform: translateX(0) scaleY(1); 
+  }
+  3% { 
+    -webkit-transform: translateX(0) scaleY(0.1); /* Eye closes */
+  }
+  6% { 
+    -webkit-transform: translateX(0) scaleY(1); /* Eye opens */
+  }
+  
+  /* Pause */
+  10% { 
+    -webkit-transform: translateX(0) scaleY(1); 
+  }
+  
+  /* Look left */
+  20% { 
+    -webkit-transform: translateX(-3px) scaleY(1); 
+  }
+  30% { 
+    -webkit-transform: translateX(-3px) scaleY(1); /* Hold left */
+  }
+  
+  /* Look right */
+  40% { 
+    -webkit-transform: translateX(3px) scaleY(1); 
+  }
+  50% { 
+    -webkit-transform: translateX(3px) scaleY(1); /* Hold right */
+  }
+  
+  /* Return to center and blink 2 */
+  55% { 
+    -webkit-transform: translateX(0) scaleY(1); 
+  }
+  58% { 
+    -webkit-transform: translateX(0) scaleY(0.1); /* Blink 2 */
+  }
+  61% { 
+    -webkit-transform: translateX(0) scaleY(1); 
+  }
+  
+  /* Small movements - looking around */
+  70% { 
+    -webkit-transform: translateX(-2px) scaleY(1); 
+  }
+  80% { 
+    -webkit-transform: translateX(2px) scaleY(1); 
+  }
+  90% { 
+    -webkit-transform: translateX(-1px) scaleY(1); 
+  }
+  
+  /* Return to rest */
+  100% { 
+    -webkit-transform: translateX(0) scaleY(1); 
   }
 }
 
@@ -273,11 +338,33 @@
 .chart-curve-3 {
   will-change: transform, opacity;
   backface-visibility: hidden;
+  /* Force hardware acceleration on Windows */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
 }
 
 /* Smooth icon container */
 .course-icon {
   transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  /* Enable hardware acceleration */
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Force hardware acceleration for all animated elements */
+.course-card:hover .eye-pupil,
+.course-card:hover .bubble,
+.course-card:hover .chart-curve-1,
+.course-card:hover .chart-curve-2,
+.course-card:hover .chart-curve-3 {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 /* ==========================================
