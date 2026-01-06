@@ -826,9 +826,19 @@ body {
 }
 
 .footer-logo {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--accent-turquoise);
+  height: 40px !important;
+  max-height: 40px !important;
+  width: auto;
+  display: block;
+  border: none;
+  outline: none;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: auto;
   margin-bottom: 15px;
 }
 
