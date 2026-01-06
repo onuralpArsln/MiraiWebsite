@@ -129,6 +129,22 @@ body {
   font-weight: 700;
 }
 
+.logo .logo-img {
+  height: 60px !important;
+  max-height: 60px !important;
+  width: auto;
+  display: block;
+  border: none;
+  outline: none;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: auto;
+}
+
 .nav-menu {
   display: flex;
   list-style: none;
